@@ -21,9 +21,9 @@ Configuring Dropbox
 
 I'm not teaching how to create an account for dropbox nor how to install and configure the software. You can easily find how to do it googling.
 
-First, we need to create a folder to hold our files inside Dropbox folder. I created a structure like ``AppData/SublimeText3``, but is up to you to decide how the folder structure will be.
+First, we need to create a folder to hold our files inside Dropbox folder. I created a structure like ``AppData/SublimeText3``, but it is up to you to decide how the folder structure will be.
 
-Now, we copy two folder from SB3, Installed Packages and Packages, to the recently created folder inside Dropbox folder. On Windows those folders are probably in ``C:\Users\<YourUserHere>\AppData\Roaming\Sublime Text 3``, and on Linux at ``/home/<YourUserHere>/.config/sublime-text-3``. Remeber to make always make a backup.
+Now, we copy two folders from SB3, Installed Packages and Packages, to the recently created folder inside Dropbox folder. On Windows those folders are probably in ``C:\Users\<YourUserHere>\AppData\Roaming\Sublime Text 3``, and on Linux at ``/home/<YourUserHere>/.config/sublime-text-3``. Remeber to make always make a backup.
 
 Windows
 =======
@@ -33,7 +33,8 @@ Windows
 Create a batch file anywhere. You can use any name, but I'm assuming that you picked ``install.bat``.
 Copy and past this code inside:
 
-.. code-block:: batch
+.. code-block:: guess
+	:linenos: table
 
     @echo off
  
@@ -62,7 +63,7 @@ Copy and past this code inside:
 	 
 	echo Done!
 
-Remeber to edit both two path variables accordingly with your system path.
+Remember to edit both two path variables accordingly with your system path.
 
 This script will remove ``Installed Packages`` and ``Packages`` from SB3 folder and create symbolic links to the folders from Dropbox.
 
@@ -108,7 +109,7 @@ What to do now?
 
 Now you can do this process in more than two machines if you please.
 
-I don't wrote an OS X version of the scripts because I don't use an Apple Computer, but you can do it just changing the paths from linux script (I think!?).
+I didn't write an OS X version of the scripts because I don't use an Apple Computer, but you can do it just changing the paths from linux script (I think!?).
 And if you want to sync another files it is easy to add it to the scripts. 
 
 All done, have fun coding.
