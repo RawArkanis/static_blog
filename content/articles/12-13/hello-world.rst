@@ -10,23 +10,23 @@ Hello World
 :summary: My 'Hello World' post!
 
 .. code-block:: python
-	:linenos: table
+   :linenos: table
 
     print 'Hello World'
 
 .. code-block:: javascript
-	:linenos: table
+   :linenos: table
 
     document.write('Hello World'');
 
 .. code-block:: c++
-	:linenos: table
+   :linenos: table
 
     #include <iostream>
-	
-	using namespace std;
 
-	int main(int argc, char * argv[])
-	{
- 		cout << "Hello World" << endl;
- 	}
+    using namespace std;
+
+    int main(int argc, char * argv[])
+    {
+        cout << "Hello World" << endl;
+    }

@@ -34,34 +34,34 @@ Create a batch file anywhere. You can use any name, but I'm assuming that you pi
 Copy and past this code inside:
 
 .. code-block:: guess
-	:linenos: table
+   :linenos: table
 
     @echo off
- 
-	:: Change those two varaibles
-	set DROPBOX_PATH=C:\Users\<YourUserHere>\Dropbox\AppData\SublimeText3
-	set SUBLIME_PATH=C:\Users\<YourUserHere>\AppData\Roaming\Sublime Text 3
-	 
-	:: Remove default folders if exists
-	if exist "%SUBLIME_PATH%\Installed Packages" (goto remove_ipkg) else (goto check_pkg)
-	 
-	:remove_ipkg
-	echo Removing "%SUBLIME_PATH%\Installed Packages"
-	rmdir /s /q "%SUBLIME_PATH%\Installed Packages"
-	 
-	:check_pkg
-	if exist "%SUBLIME_PATH%\Packages" (goto remove_pkg) else (goto install)
-	 
-	:remove_pkg
-	echo Removing "%SUBLIME_PATH%\Packages"
-	rmdir /s /q "%SUBLIME_PATH%\Packages"
-	 
-	:: Install links
-	:install
-	mklink /D "%SUBLIME_PATH%\Installed Packages" "%DROPBOX_PATH%\Installed Packages"
-	mklink /D "%SUBLIME_PATH%\Packages" "%DROPBOX_PATH%\Packages"
-	 
-	echo Done!
+
+    :: Change those two varaibles
+    set DROPBOX_PATH=C:\Users\<YourUserHere>\Dropbox\AppData\SublimeText3
+    set SUBLIME_PATH=C:\Users\<YourUserHere>\AppData\Roaming\Sublime Text 3
+
+    :: Remove default folders if exists
+    if exist "%SUBLIME_PATH%\Installed Packages" (goto remove_ipkg) else (goto check_pkg)
+
+    :remove_ipkg
+    echo Removing "%SUBLIME_PATH%\Installed Packages"
+    rmdir /s /q "%SUBLIME_PATH%\Installed Packages"
+    
+    :check_pkg
+    if exist "%SUBLIME_PATH%\Packages" (goto remove_pkg) else (goto install)
+    
+    :remove_pkg
+    echo Removing "%SUBLIME_PATH%\Packages"
+    rmdir /s /q "%SUBLIME_PATH%\Packages"
+    
+    :: Install links
+    :install
+    mklink /D "%SUBLIME_PATH%\Installed Packages" "%DROPBOX_PATH%\Installed Packages"
+    mklink /D "%SUBLIME_PATH%\Packages" "%DROPBOX_PATH%\Packages"
+    
+    echo Done!
 
 Remember to edit both two path variables accordingly with your system path.
 
@@ -77,28 +77,29 @@ Linux
 Same process, create a ``install.sh`` and copy and paste the following code inside:
 
 .. code-block:: bash
+   :linenos: table
 
     #!/bin/sh
-	# Change those two varaibles
-	DROPBOX_PATH=/home/<YourUserHere>/Dropbox/AppData/SublimeText3
-	SUBLIME_PATH=/home/<YourUserHere>/.config/sublime-text-3
-	 
-	# Remove default folders if exists
-	if [ -d "$SUBLIME_PATH/Installed Packages" ]; then
-	  echo "Removing $SUBLIME_PATH/Installed Packages"
-	  rm -rf "$SUBLIME_PATH/Installed Packages"
-	fi
-	 
-	if [ -d "$SUBLIME_PATH/Packages" ]; then
-	  echo "Removing $SUBLIME_PATH/Packages"
-	  rm -rf "$SUBLIME_PATH/Packages"
-	fi
-	 
-	# Install links
-	ln -s "$DROPBOX_PATH/Installed Packages" "$SUBLIME_PATH/Installed Packages"
-	ln -s "$DROPBOX_PATH/Packages" "$SUBLIME_PATH/Packages"
-	 
-	echo "Done!"
+    # Change those two varaibles
+    DROPBOX_PATH=/home/<YourUserHere>/Dropbox/AppData/SublimeText3
+    SUBLIME_PATH=/home/<YourUserHere>/.config/sublime-text-3
+    
+    # Remove default folders if exists
+    if [ -d "$SUBLIME_PATH/Installed Packages" ]; then
+      echo "Removing $SUBLIME_PATH/Installed Packages"
+      rm -rf "$SUBLIME_PATH/Installed Packages"
+    fi
+    
+    if [ -d "$SUBLIME_PATH/Packages" ]; then
+      echo "Removing $SUBLIME_PATH/Packages"
+      rm -rf "$SUBLIME_PATH/Packages"
+    fi
+    
+    # Install links
+    ln -s "$DROPBOX_PATH/Installed Packages" "$SUBLIME_PATH/Installed Packages"
+    ln -s "$DROPBOX_PATH/Packages" "$SUBLIME_PATH/Packages"
+    
+    echo "Done!"
 
 Again, edit both path variables.
 
