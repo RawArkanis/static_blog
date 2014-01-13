@@ -10,17 +10,14 @@ Hello World
 :summary: My 'Hello World' post!
 
 .. code-block:: python
-   :linenos: table
 
     print 'Hello World'
 
 .. code-block:: javascript
-   :linenos: table
 
     document.write('Hello World'');
 
 .. code-block:: c++
-   :linenos: table
 
     #include <iostream>
 

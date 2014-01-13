@@ -21,20 +21,19 @@ Configuring Dropbox
 
 I'm not teaching how to create an account for dropbox nor how to install and configure the software. You can easily find how to do it googling.
 
-First, we need to create a folder to hold our files inside Dropbox folder. I created a structure like ``AppData/SublimeText3``, but it is up to you to decide how the folder structure will be.
+First, we need to create a folder to hold our files inside Dropbox folder. I created a structure like :code:`AppData/SublimeText3`, but it is up to you to decide how the folder structure will be.
 
-Now, we copy two folders from SB3, Installed Packages and Packages, to the recently created folder inside Dropbox folder. On Windows those folders are probably in ``C:\Users\<YourUserHere>\AppData\Roaming\Sublime Text 3``, and on Linux at ``/home/<YourUserHere>/.config/sublime-text-3``. Remeber to make always make a backup.
+Now, we copy two folders from SB3, Installed Packages and Packages, to the recently created folder inside Dropbox folder. On Windows those folders are probably in :code:`C:\Users\<YourUserHere>\AppData\Roaming\Sublime Text 3`, and on Linux at :code:`/home/<YourUserHere>/.config/sublime-text-3`. Remeber to make always make a backup.
 
 Windows
 =======
 
 *Tested with SB3 Build 3059 on Windows 8.1. Probably work fine with older version or maybe need some minor changes.*
 
-Create a batch file anywhere. You can use any name, but I'm assuming that you picked ``install.bat``.
+Create a batch file anywhere. You can use any name, but I'm assuming that you picked :code:`install.bat`.
 Copy and past this code inside:
 
-.. code-block:: guess
-   :linenos: table
+.. code-block:: winbatch
 
     @echo off
 
@@ -65,19 +64,18 @@ Copy and past this code inside:
 
 Remember to edit both two path variables accordingly with your system path.
 
-This script will remove ``Installed Packages`` and ``Packages`` from SB3 folder and create symbolic links to the folders from Dropbox.
+This script will remove :code:`Installed Packages` and :code:`Packages` from SB3 folder and create symbolic links to the folders from Dropbox.
 
-To run just open CMD (pressing Windows Key + R and typing cmd), navigate to the location where the script is placed and type ``install.bat``. Done!
+To run just open CMD (pressing Windows Key + R and typing cmd), navigate to the location where the script is placed and type :code:`install.bat`. Done!
 
 Linux
 =====
 
 *Tested with SB3 Build 3059 on Fedora 20. Probably work fine in another linux distros.*
 
-Same process, create a ``install.sh`` and copy and paste the following code inside:
+Same process, create a :code:`install.sh` and copy and paste the following code inside:
 
 .. code-block:: bash
-   :linenos: table
 
     #!/bin/sh
     # Change those two varaibles
@@ -103,7 +101,7 @@ Same process, create a ``install.sh`` and copy and paste the following code insi
 
 Again, edit both path variables.
 
-To run open a terminal and navigate to the folder where the file is, give execution permission with ``chmod +x install.sh``, and finally type ``./install.sh``. Done!
+To run open a terminal and navigate to the folder where the file is, give execution permission with :code:`chmod +x install.sh`, and finally type :code:`./install.sh`. Done!
 
 What to do now?
 ===============
